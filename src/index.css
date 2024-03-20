@@ -82,3 +82,37 @@
 .todo-complete {
   box-shadow: 4px 4px 8px 0px rgba(9, 226, 27, 0.384);
 }
+.modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.568);
+}
+.modal-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.modal-btns {
+  display: flex;
+  gap: 10px;
+}
+.todo-value {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}

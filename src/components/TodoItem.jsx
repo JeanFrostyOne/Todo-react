@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TodoItem({ item }) {
+export default function TodoItem({ item, handleDelete, handleComplete, handleEdit }) {
   return (
     <div className={item.completed ? "todo-item todo-complete" : "todo-item"}>
       <div className="todo-info">
@@ -8,9 +8,21 @@ export default function TodoItem({ item }) {
         <p className="todo-text">{item.time}</p>
       </div>
       <div className="todo-row">
-        <button className="todo-btn btn-edit">Edit</button>
-        <button className="todo-btn btn-delete">Delete</button>
-        {!item.completed && <button className="todo-btn btn-confirm">Confirm</button>}
+        <button onClick={() => handleEdit(item)} className="todo-btn btn-edit">Edit</button>
+        <button
+          onClick={() => handleDelete(item.id)}
+          className="todo-btn btn-delete"
+        >
+          Delete
+        </button>
+        {!item.completed && (
+          <button
+            onClick={() => handleComplete(item.id)}
+            className="todo-btn btn-confirm"
+          >
+            Confirm
+          </button>
+        )}
       </div>
     </div>
   );
