@@ -5,7 +5,9 @@ import Modal from "./Modal";
 export default function TodoList() {
   const [text, setText] = useState("");
   const [time, setTime] = useState("00:00");
-  const [data, setData] = useState(localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : []);
+  const [data, setData] = useState(
+    localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : []
+  );
   const [open, setOpen] = useState(false);
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(data));
@@ -110,9 +112,7 @@ export default function TodoList() {
           );
         })}
       </div>
-      {open && (
-        <Modal handleClose={handleClose} item={open} handleSave={handleSave} />
-      )}
+  
     </div>
   );
 }
